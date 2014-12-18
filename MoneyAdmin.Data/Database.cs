@@ -21,5 +21,11 @@ namespace MoneyAdmin.Data
         {
 
         }
+
+        public override int SaveChanges()
+        {
+            // TODO: Add audit fields before save
+            return base.SaveChanges();
+        }
     }
 }
