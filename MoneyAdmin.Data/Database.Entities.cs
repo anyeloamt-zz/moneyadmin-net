@@ -11,5 +11,7 @@ namespace MoneyAdmin.Data
     partial class Database
     {
         public DbSet<Wallet> Wallets { get; set; }
+
+        public DbSet<Category> Categories{ get; set; }
     }
 }

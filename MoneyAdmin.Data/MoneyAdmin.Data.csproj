@@ -59,6 +59,10 @@
     <Compile Include="Migrations\201412190203284_InitialMigration.Designer.cs">
       <DependentUpon>201412190203284_InitialMigration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201412190407010_AddCategoryEntity.cs" />
+    <Compile Include="Migrations\201412190407010_AddCategoryEntity.Designer.cs">
+      <DependentUpon>201412190407010_AddCategoryEntity.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -69,6 +73,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201412190203284_InitialMigration.resx">
       <DependentUpon>201412190203284_InitialMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201412190407010_AddCategoryEntity.resx">
+      <DependentUpon>201412190407010_AddCategoryEntity.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
