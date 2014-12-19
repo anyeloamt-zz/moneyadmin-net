@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace MoneyAdmin.Data
 {
-    public class Database : DbContext
+    public partial class Database : DbContext
     {
         public Database() : 
             base(ConfigurationManager.ConnectionStrings["MoneyAdminConn"].ConnectionString)
