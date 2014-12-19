@@ -52,6 +52,7 @@
     <Compile Include="Database.cs" />
     <Compile Include="Database.Entities.cs" />
     <Compile Include="Entities\BaseEntity.cs" />
+    <Compile Include="Entities\Category.cs" />
     <Compile Include="Entities\IEntity.cs" />
     <Compile Include="Entities\Wallet.cs" />
     <Compile Include="Migrations\201412190203284_InitialMigration.cs" />
