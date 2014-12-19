@@ -13,5 +13,7 @@ namespace MoneyAdmin.Data.Entities
         public string Name { get; set; }
 
         public double InitialBalance { get; set; }
+
+        public ICollection<Transaction> Transactions { get; set; }
     }
 }
