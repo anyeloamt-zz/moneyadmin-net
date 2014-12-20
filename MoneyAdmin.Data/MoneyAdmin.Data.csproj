@@ -68,6 +68,10 @@
     <Compile Include="Migrations\201412190413489_AddTransactionEntity.Designer.cs">
       <DependentUpon>201412190413489_AddTransactionEntity.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201412200348263_AddDeletedAtToEntities.cs" />
+    <Compile Include="Migrations\201412200348263_AddDeletedAtToEntities.Designer.cs">
+      <DependentUpon>201412200348263_AddDeletedAtToEntities.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -84,6 +88,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201412190413489_AddTransactionEntity.resx">
       <DependentUpon>201412190413489_AddTransactionEntity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201412200348263_AddDeletedAtToEntities.resx">
+      <DependentUpon>201412200348263_AddDeletedAtToEntities.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
