@@ -74,6 +74,9 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\Base\GenericRepository.cs" />
+    <Compile Include="Repositories\Base\IGenericRepository.cs" />
+    <Compile Include="Repositories\WalletsRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
