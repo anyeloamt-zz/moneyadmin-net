@@ -10,7 +10,7 @@ namespace MoneyAdmin.Controllers
 {
     public class WalletsController : BaseController
     {
-        private IGenericRepository<Wallet> _repository;
+        private readonly IGenericRepository<Wallet> _repository;
 
         public WalletsController(IGenericRepository<Wallet> repository)
         {
@@ -22,7 +22,8 @@ namespace MoneyAdmin.Controllers
 
         public ActionResult Index()
         {
-            return View();
+            var wallets = _repository.AsQueryable();
+            return View(wallets);
         }
 
         //

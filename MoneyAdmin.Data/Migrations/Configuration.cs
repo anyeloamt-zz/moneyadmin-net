@@ -1,3 +1,5 @@
+using MoneyAdmin.Data.Entities;
+
 namespace MoneyAdmin.Data.Migrations
 {
     using System;
@@ -14,18 +16,15 @@ namespace MoneyAdmin.Data.Migrations
 
         protected override void Seed(MoneyAdmin.Data.Database context)
         {
-            //  This method will be called after migrating to the latest version.
-
-            //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
-            //  to avoid creating duplicate seed data. E.g.
-            //
-            //    context.People.AddOrUpdate(
-            //      p => p.FullName,
-            //      new Person { FullName = "Andrew Peters" },
-            //      new Person { FullName = "Brice Lambson" },
-            //      new Person { FullName = "Rowan Miller" }
-            //    );
-            //
+            context.Wallets.Add(new Wallet
+            {
+                Name = "Dec 15 to dec 30",
+                InitialBalance = 15000,
+                CreatedAt = DateTime.Now,
+                UpdatedAt = DateTime.Now,
+                CreatedBy = 1,
+                UpdatedBy = 1
+            });
         }
     }
 }
