@@ -9,6 +9,8 @@ namespace GenericRepository
 {
     public interface IGenericRepository<T> where T : class
     {
+        T FindById(int id);
+
         IQueryable<T> AsQueryable();
 
         IQueryable<T> FindBy(Expression<Func<T, bool>> conditions);
