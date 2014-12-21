@@ -21,7 +21,10 @@ namespace GenericRepository
             set { _entities = value; }
         }
 
-        public abstract T FindById(int id);
+        public T Find(int id)
+        {
+            return _entities.Set<T>().Find(id);
+        }
 
         public virtual IQueryable<T> AsQueryable()
         {

@@ -9,7 +9,7 @@ namespace GenericRepository
 {
     public interface IGenericRepository<T> where T : class
     {
-        T FindById(int id);
+        T Find(int id);
 
         IQueryable<T> AsQueryable();
 
