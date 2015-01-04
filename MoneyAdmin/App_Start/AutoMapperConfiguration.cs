@@ -18,6 +18,7 @@ namespace MoneyAdmin
 	    public static void Configure()
 	    {
 	        Mapper.CreateMap<User, UserViewModel>().Back();
+            Mapper.CreateMap<User, LoginViewModel>().Back();
 	    }
 	}
 }
