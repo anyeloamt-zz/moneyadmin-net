@@ -55,6 +55,7 @@
     <Compile Include="Entities\Category.cs" />
     <Compile Include="Entities\IEntity.cs" />
     <Compile Include="Entities\Transaction.cs" />
+    <Compile Include="Entities\User.cs" />
     <Compile Include="Entities\Wallet.cs" />
     <Compile Include="Migrations\201412190203284_InitialMigration.cs" />
     <Compile Include="Migrations\201412190203284_InitialMigration.Designer.cs">
@@ -71,6 +72,14 @@
     <Compile Include="Migrations\201412200348263_AddDeletedAtToEntities.cs" />
     <Compile Include="Migrations\201412200348263_AddDeletedAtToEntities.Designer.cs">
       <DependentUpon>201412200348263_AddDeletedAtToEntities.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201501041720284_AddUsersEntity.cs" />
+    <Compile Include="Migrations\201501041720284_AddUsersEntity.Designer.cs">
+      <DependentUpon>201501041720284_AddUsersEntity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201501041818381_AddUserReferencesToEntities.cs" />
+    <Compile Include="Migrations\201501041818381_AddUserReferencesToEntities.Designer.cs">
+      <DependentUpon>201501041818381_AddUserReferencesToEntities.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -94,6 +103,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201412200348263_AddDeletedAtToEntities.resx">
       <DependentUpon>201412200348263_AddDeletedAtToEntities.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201501041720284_AddUsersEntity.resx">
+      <DependentUpon>201501041720284_AddUsersEntity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201501041818381_AddUserReferencesToEntities.resx">
+      <DependentUpon>201501041818381_AddUserReferencesToEntities.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

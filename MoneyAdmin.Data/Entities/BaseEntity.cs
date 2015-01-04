@@ -17,5 +17,9 @@ namespace MoneyAdmin.Data.Entities
         public int UpdatedBy { get; set; }
 
         public DateTime? DeletedAt { get; set; }
+
+        public virtual User Creator { get; set; }
+
+        public virtual User Modifier { get; set; }
     }
 }
