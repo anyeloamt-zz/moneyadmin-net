@@ -23,7 +23,8 @@ namespace MoneyAdmin.Controllers
         public ActionResult Index()
         {
             var wallets = _repository.AsEnumerable()
-                .Where(w => w.CreatedBy == CurrentUser.Id);
+                .Where(ByCurrentUserPredicate<Wallet>());
+
             return View(wallets);
         }
 

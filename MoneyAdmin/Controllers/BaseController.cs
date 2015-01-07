@@ -16,5 +16,10 @@ namespace MoneyAdmin.Controllers
         {
             get { return (Session["User"] as User); }
         }
+
+        protected Func<T, bool> ByCurrentUserPredicate<T>() where T : BaseEntity
+        {
+            return x => x.CreatedBy == CurrentUser.Id;
+        }
     }
 }

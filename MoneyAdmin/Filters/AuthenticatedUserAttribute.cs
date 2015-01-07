@@ -6,7 +6,6 @@ using System.Web;
 using System.Web.Mvc;
 using MoneyAdmin.Data;
 using MoneyAdmin.Data.Entities;
-using MoneyAdmin.Data.Repositories;
 using MoneyAdmin.Data.Repositories.Base;
 using Ninject;
 
