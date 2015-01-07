@@ -15,7 +15,7 @@ namespace MoneyAdmin.Data
         public Database() :
             base(ConfigurationManager.ConnectionStrings["MoneyAdminConn"].ConnectionString)
         {
-
+            Configuration.LazyLoadingEnabled = false;
         }
 
         public Database(string connectionString) :
