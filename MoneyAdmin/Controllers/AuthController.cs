@@ -44,6 +44,7 @@ namespace MoneyAdmin.Controllers
             if (null != user)
             {
                 FormsAuthentication.SetAuthCookie(user.Username, loginViewModel.RememberMe);
+                Session.Add("User", user);
                 return RedirectHome();
             }
 
