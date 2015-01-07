@@ -1,20 +1,25 @@
 ﻿@model IEnumerable<MoneyAdmin.Data.Entities.Wallet>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Wallets";
 }
-
-<h2>Index</h2>
-
-<div>
-    <ul>
-        @foreach (var wallet in Model)
-        {
-            <li>
-                @wallet.Name
-                <br />
-                @wallet.InitialBalance
-            </li>
-        }
-    </ul>
+<div class="container">
+    <div class="row">
+        <h2>@ViewBag.Title</h2>
+        <hr />
+        <div class="col-md-4">
+            <div>
+                <ul>
+                    @foreach (var wallet in Model)
+                    {
+                        <li>
+                            @wallet.Name
+                            <br />
+                            @wallet.InitialBalance
+                        </li>
+                    }
+                </ul>
+            </div>
+        </div>
+    </div>
 </div>
