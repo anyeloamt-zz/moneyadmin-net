@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Linq.Expressions;
@@ -24,6 +26,11 @@ namespace MoneyAdmin.Data.Repositories.Base
         }
 
         public virtual IQueryable<T> AsQueryable()
+        {
+            return _entities.Set<T>();
+        }
+
+        public virtual IEnumerable<T> AsEnumerable()
         {
             return _entities.Set<T>();
         }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 
@@ -9,6 +10,8 @@ namespace MoneyAdmin.Data.Repositories.Base
         T Find(int id);
 
         IQueryable<T> AsQueryable();
+
+        IEnumerable<T> AsEnumerable();
 
         IQueryable<T> FindBy(Expression<Func<T, bool>> conditions);
 
