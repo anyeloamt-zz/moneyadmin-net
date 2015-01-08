@@ -21,5 +21,7 @@ namespace MoneyAdmin.Data.Entities
         public virtual Wallet Wallet { get; set; }
 
         public virtual Category Category { get; set; }
+
+        public virtual ICollection<File> Files { get; set; }
     }
 }

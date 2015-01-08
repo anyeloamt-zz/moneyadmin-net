@@ -13,5 +13,9 @@ namespace MoneyAdmin.Data.Entities
         public string Title { get; set; }
 
         public string Path { get; set; }
+
+        public int TransactionId { get; set; }
+
+        public virtual Transaction Transaction { get; set; }
     }
 }
