@@ -16,10 +16,12 @@ namespace MoneyAdmin.Controllers
     public class AuthController : Controller
     {
         private readonly IGenericRepository<User> _repository;
+        private readonly IGenericRepository<LoginHistory> _historyRepository;
 
-        public AuthController(IGenericRepository<User> repository)
+        public AuthController(IGenericRepository<User> repository, IGenericRepository<LoginHistory> historyRepository)
         {
             _repository = repository;
+            _historyRepository = historyRepository;
         }
 
         [HttpGet]
@@ -35,16 +37,14 @@ namespace MoneyAdmin.Controllers
         {
             if (Request.IsAuthenticated) return RedirectHome();
 
-            var password = PasswordHasher.MD5Hash(loginViewModel.Password);
-
-            var user = _repository.AsQueryable()
+            var user = _repository.AsEnumerable()
                 .Where(u => u.Username == loginViewModel.Username)
-                .FirstOrDefault(u => u.Password == password);
+                .FirstOrDefault(u => u.Password == PasswordHasher.MD5Hash(loginViewModel.Password));
 
             if (null != user)
             {
                 FormsAuthentication.SetAuthCookie(user.Username, loginViewModel.RememberMe);
-                Session.Add("User", user);
+                DoPostLogin(user);
                 return RedirectHome();
             }
 
@@ -52,8 +52,30 @@ namespace MoneyAdmin.Controllers
             return View(loginViewModel);
         }
 
+        private void DoPostLogin(User user)
+        {
+            Session.Add("User", user);
+            _historyRepository.Add(new LoginHistory
+            {
+                Action = ActionType.Login,
+                Date = DateTime.Now,
+                UserId = user.Id
+            }).Save();
+        }
+
+        private void DoPreLogout()
+        {
+            _historyRepository.Add(new LoginHistory
+            {
+                Action = ActionType.Logout,
+                Date = DateTime.Now,
+                UserId = ((User) Session["User"]).Id
+            }).Save();
+        }
+
         public ActionResult LogOut()
         {
+            DoPreLogout();
             FormsAuthentication.SignOut();
             return RedirectHome();
         }
