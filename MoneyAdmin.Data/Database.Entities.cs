@@ -17,5 +17,11 @@ namespace MoneyAdmin.Data
         public DbSet<Transaction> Transactions { get; set; }
 
         public DbSet<User> Users { get; set; }
+
+        public DbSet<LoginHistory> LoginHistories { get; set; }
+
+        public DbSet<File> Files { get; set; }
+
+        public DbSet<ShareCode> ShareCodes { get; set; }
     }
 }

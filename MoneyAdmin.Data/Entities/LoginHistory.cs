@@ -14,6 +14,13 @@ namespace MoneyAdmin.Data.Entities
 
         public int UserId { get; set; }
 
+        public ActionType Action { get; set; }
+
         public virtual User User { get; set; }
+    }
+
+    public enum ActionType
+    {
+        Login = 1, Logout
     }
 }
