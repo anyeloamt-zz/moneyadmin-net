@@ -212,6 +212,7 @@
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\WalletsController.cs" />
+    <Compile Include="Extensions\RepositoryExtensions.cs" />
     <Compile Include="Filters\AuthenticatedUserAttribute.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
     <Compile Include="Global.asax.cs">

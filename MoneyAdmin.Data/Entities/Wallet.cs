@@ -14,6 +14,8 @@ namespace MoneyAdmin.Data.Entities
 
         public double InitialBalance { get; set; }
 
+        public double AvailableBalance { get; set; }
+
         public virtual ICollection<Transaction> Transactions { get; set; }
     }
 }

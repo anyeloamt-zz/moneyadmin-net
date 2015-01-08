@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using MoneyAdmin.Data.Entities;
 using MoneyAdmin.Data.Repositories.Base;
+using MoneyAdmin.Extensions;
 
 namespace MoneyAdmin.Controllers
 {
@@ -22,7 +23,7 @@ namespace MoneyAdmin.Controllers
 
         public ActionResult Index()
         {
-            var wallets = _repository.AsEnumerable()
+            var wallets = _repository.RecentWallets()
                 .Where(ByCurrentUserPredicate<Wallet>());
 
             return View(wallets);
