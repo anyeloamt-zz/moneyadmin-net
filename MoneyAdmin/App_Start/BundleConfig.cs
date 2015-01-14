@@ -44,9 +44,13 @@ namespace MoneyAdmin
 
             bundles.Add(new ScriptBundle("~/bundles/ko").Include(
 #if DEBUG
-            "~/Scripts/knockout-3.2.0.debug.js"));
+            "~/Scripts/knockout-3.2.0.debug.js",
+            "~/Scripts/knockout.mapping-latest.debug.js"
+            ));
 #else
-            "~/Scripts/knockout-3.2.0.js"));
+            "~/Scripts/knockout-3.2.0.js",
+            "~/Scripts/knockout.mapping-latest.js"
+            ));
 #endif
             bundles.Add(new ScriptBundle("~/AppBundle").Include(
                 "~/Scripts/App/ViewModel.js",

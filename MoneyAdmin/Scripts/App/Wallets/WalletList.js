@@ -1,8 +1,6 @@
 ﻿
-var WalletList = function () { };
+var WalletList = function(wallets) {
+    var self = this;
 
-WalletList.prototype.wallets = ko.observableArray([WalletViewModel]);
-
-WalletList.prototype.constructor = function(wallets) {
-    this.wallets(wallets);
-}
+    self.wallets = ko.observableArray(wallets || [new WalletViewModel()]);
+};
