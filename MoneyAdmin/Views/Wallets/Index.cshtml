@@ -8,18 +8,15 @@
         <h2>@ViewBag.Title</h2>
         <hr />
         <div class="col-md-4">
-            <div>
-                <ul>
-                    @foreach (var wallet in Model)
-                    {
-                        <li>
-                            @wallet.Name
-                            <br />
-                            @wallet.InitialBalance
-                        </li>
-                    }
-                </ul>
+            <div id="walletsContainer">
+                
             </div>
         </div>
     </div>
 </div>
+@section scripts
+{
+    <script>
+        var walletsJson = @Html.Raw(Json.Encode(Model));
+    </script>
+}

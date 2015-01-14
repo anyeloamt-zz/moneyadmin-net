@@ -34,7 +34,7 @@ namespace MoneyAdmin.Controllers
 
         public ActionResult Details(int id)
         {
-            return View();
+            return View("Partials/Wallets/_Create");
         }
 
         //
