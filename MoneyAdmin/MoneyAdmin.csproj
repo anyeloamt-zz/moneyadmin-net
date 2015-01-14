@@ -389,6 +389,9 @@
     <Content Include="Content\themes\lumen\bootswatch.less" />
     <Content Include="Content\themes\lumen\variables.less" />
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
+    <Content Include="Scripts\App\ViewModel.js" />
+    <Content Include="Scripts\App\Wallets\WalletList.js" />
+    <Content Include="Scripts\App\Wallets\WalletViewModel.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\html5shiv.js" />

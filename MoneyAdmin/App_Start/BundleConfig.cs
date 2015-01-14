@@ -41,6 +41,21 @@ namespace MoneyAdmin
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap")
                 .Include("~/Scripts/bootstrap*"));
+
+            bundles.Add(new ScriptBundle("~/bundles/ko").Include(
+#if DEBUG
+            "~/Scripts/knockout-3.2.0.debug.js"));
+#else
+            "~/Scripts/knockout-3.2.0.js"));
+#endif
+            bundles.Add(new ScriptBundle("~/AppBundle").Include(
+                "~/Scripts/App/ViewModel.js",
+                "~/Scripts/App/Wallets/WalletViewModel.js",
+                "~/Scripts/App/Wallets/WalletList.js"));
+
+#if !DEBUG
+            BundleTable.EnableOptimizations = true;
+#endif
         }
     }
 }
