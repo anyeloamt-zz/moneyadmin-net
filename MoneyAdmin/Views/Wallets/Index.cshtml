@@ -9,7 +9,7 @@
         <hr />
         <div class="col-md-4">
             <div id="walletsContainer">
-                
+                <div data-bind="template: { name: 'wallet-template', foreach: wallets }"></div>
             </div>
         </div>
     </div>
@@ -18,5 +18,11 @@
 {
     <script>
         var walletsJson = @Html.Raw(Json.Encode(Model));
+        initWalletScreen(walletsJson);
     </script>
 }
+<script type="text/html" id="wallet-template">
+    <div data-bind="text: Name"></div>
+    <div data-bind="text: InitialBalance"></div>
+    <div data-bind="text: CreatedAt"></div>
+</script>

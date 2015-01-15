@@ -55,7 +55,9 @@ namespace MoneyAdmin
             bundles.Add(new ScriptBundle("~/AppBundle").Include(
                 "~/Scripts/App/ViewModel.js",
                 "~/Scripts/App/Wallets/WalletViewModel.js",
-                "~/Scripts/App/Wallets/WalletList.js"));
+                "~/Scripts/App/Wallets/WalletList.js",
+                "~/Scripts/App/Wallets/Index.js"
+                ));
 
 #if !DEBUG
             BundleTable.EnableOptimizations = true;

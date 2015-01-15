@@ -23,7 +23,7 @@ namespace MoneyAdmin.Filters
 
             var repository = UsersRepository;
 
-            var user = repository.AsQueryable()
+            var user = repository.AsEnumerable()
                 .FirstOrDefault(u => u.Username == filterContext.HttpContext.User.Identity.Name);
 
             filterContext.Controller.ControllerContext.HttpContext.Session.Add("User", user);

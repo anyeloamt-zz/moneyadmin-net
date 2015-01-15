@@ -303,6 +303,7 @@
       <DependentUpon>variables.less</DependentUpon>
     </Content>
     <Content Include="Content\themes\lumen\bootstrap.css" />
+    <Content Include="Content\themes\lumen\SourceSansProFont.css" />
     <Content Include="Content\themes\lumen\variables.css">
       <DependentUpon>variables.less</DependentUpon>
     </Content>
@@ -390,6 +391,7 @@
     <Content Include="Content\themes\lumen\variables.less" />
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
     <Content Include="Scripts\App\ViewModel.js" />
+    <Content Include="Scripts\App\Wallets\Index.js" />
     <Content Include="Scripts\App\Wallets\WalletList.js" />
     <Content Include="Scripts\App\Wallets\WalletViewModel.js" />
     <Content Include="Scripts\bootstrap.js" />
