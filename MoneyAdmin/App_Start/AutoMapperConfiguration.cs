@@ -19,6 +19,8 @@ namespace MoneyAdmin
 	    {
 	        Mapper.CreateMap<User, UserViewModel>().Back();
             Mapper.CreateMap<User, LoginViewModel>().Back();
+
+            Mapper.CreateMap<Wallet, WalletViewModel>().Back();
 	    }
 	}
 }

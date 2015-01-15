@@ -5,7 +5,7 @@ using System.Text;
 
 namespace MoneyAdmin.ViewModel
 {
-    public class TransactionViewModel : IViewModel
+    public class TransactionViewModel : BaseViewModel
     {
         public int Id { get; set; }
 

@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using AutoMapper;
 using MoneyAdmin.Data.Entities;
 using MoneyAdmin.Data.Repositories.Base;
 using MoneyAdmin.Extensions;
+using MoneyAdmin.ViewModel;
 
 namespace MoneyAdmin.Controllers
 {
@@ -25,8 +27,10 @@ namespace MoneyAdmin.Controllers
         {
             var wallets = _repository.RecentWallets()
                 .Where(ByCurrentUserPredicate<Wallet>());
+            
+            var walletsVm = Mapper.Map<IEnumerable<WalletViewModel>>(wallets);
 
-            return View(wallets);
+            return View(walletsVm);
         }
 
         //

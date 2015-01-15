@@ -5,7 +5,7 @@ using System.Text;
 
 namespace MoneyAdmin.ViewModel
 {
-    public class CategoryViewModel : IViewModel
+    public class CategoryViewModel : BaseViewModel
     {
 
     }

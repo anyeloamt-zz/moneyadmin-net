@@ -5,7 +5,7 @@ using System.Text;
 
 namespace MoneyAdmin.ViewModel
 {
-    public class FileViewModel : IViewModel
+    public class FileViewModel : BaseViewModel
     {
 
     }

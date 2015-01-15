@@ -5,7 +5,7 @@ using System.Web;
 
 namespace MoneyAdmin.ViewModel
 {
-    public class UserViewModel
+    public class UserViewModel : IViewModel
     {
         public int Id { get; set; }
 

@@ -7,7 +7,7 @@ using System.Web;
 
 namespace MoneyAdmin.ViewModel
 {
-    public class WalletViewModel : IViewModel
+    public class WalletViewModel : BaseViewModel
     {
         [Required]
         public int Id { get; set; }
