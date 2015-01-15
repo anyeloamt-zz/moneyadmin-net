@@ -14,9 +14,21 @@ namespace MoneyAdmin
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
+                name: "Login",
+                url: "login",
+                defaults: new { controller = "Auth", action = "Login" }
+            );
+
+            routes.MapRoute(
+                name: "Logout",
+                url: "logout",
+                defaults: new { controller = "Auth", action = "LogOut" }
+            );
+
+            routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+                defaults: new { controller = "Wallets", action = "Index", id = UrlParameter.Optional }
             );
         }
     }

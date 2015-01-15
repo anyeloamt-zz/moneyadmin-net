@@ -1,0 +1,36 @@
+﻿@helper ActiveItem(string actionName, string controllerName, string areaName = null)
+{
+    if (ViewContext.RouteData.Values["action"].ToString().Equals(actionName, StringComparison.InvariantCultureIgnoreCase) &&
+            ViewContext.RouteData.Values["controller"].ToString().Equals(controllerName, StringComparison.InvariantCultureIgnoreCase) &&
+            (ViewContext.RouteData.DataTokens["area"] == null || ViewContext.RouteData.DataTokens["area"].ToString().Equals(areaName, StringComparison.CurrentCultureIgnoreCase)))
+    {
+        @:active
+    }
+}
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <section class="container">
+        <section class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">MoneyAdmin</a>
+        </section>
+        <section class="navbar-collapse collapse">
+            <ul class="nav navbar-nav"></ul>
+            <ul class="nav navbar-nav pull-right">
+                <li class="@ActiveItem("Index", "Wallets")">@Html.ActionLink("Carteras", "Index", "Wallets")</li>
+                <li class="@ActiveItem("Index", "Transactions")">
+                    <a href="javascript:;">Transacciones</a>
+                    @*@Html.ActionLink("About", "About", "Home")*@
+                </li>
+                <li class="@ActiveItem("Index", "Categories")">
+                    <a href="javascript:;">Categor&iacute;as</a>
+                </li>
+                <li class="pull-right ">@{ Html.RenderPartial("_LoginPartial"); }</li>
+            </ul>
+        </section>
+    </section>
+</nav>
