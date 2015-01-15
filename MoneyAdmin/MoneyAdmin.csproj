@@ -463,6 +463,8 @@
     <Content Include="Views\Shared\_Styles.cshtml" />
     <Content Include="Views\Wallets\_Create.cshtml" />
     <Content Include="Views\Shared\Partials\Wallets\_Create.cshtml" />
+    <Content Include="Views\Shared\_Templates.cshtml" />
+    <Content Include="Views\Shared\Partials\Templates\_Wallet.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
