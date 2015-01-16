@@ -1,5 +1,4 @@
-﻿
-var ViewModel = function () { };
+﻿var ViewModel = function() {};
 
 ViewModel.prototype.CreatedAt = ko.observable();
 ViewModel.prototype.UpdatedAt = ko.observable();

@@ -1,5 +1,41 @@
 ﻿<script type="text/html" id="wallet-template">
-    <div data-bind="text: Name"></div>
-    <div data-bind="text: InitialBalance"></div>
-    <div data-bind="text: CreatedAt"></div>
+    <div class="col-md-4">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h4 class="text-center lead">
+                    <strong data-bind="text: Name"></strong>
+                </h4>
+            </div>
+            <div class="panel-body text-center">
+                <p class="">
+                    <strong data-bind="text: AvailableBalance"></strong>
+                </p>
+                <p class="text-warning">Balance disponible</p>
+            </div>
+            <ul class="list-group text-center">
+                <li class="list-group-item">
+                    <span data-bind="text: InitialBalance"></span>
+                    <p class="text-warning">Balance inicial</p>
+                </li>
+                <li class="list-group-item">
+                    <span data-bind="text: Transactions().length"></span>
+                    <p class="text-warning">Total de transacciones</p>
+                </li>
+            </ul>
+            <div class="panel-footer">
+                <div class="row">
+                    <div data-bind="css: actionClass, click: addTransaction">
+                        <button class="btn btn-lg btn-block btn-default" title="Agregar transacci&oacute;n">
+                            Agregar transacci&oacute;n
+                        </button>
+                    </div>
+                    <div data-bind="visible: hasTransactions(), css: actionClass, click: viewTransactions">
+                        <button class="btn btn-lg btn-block btn-success" title="Ver transacciones">
+                            Ver transacciones
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </script>
