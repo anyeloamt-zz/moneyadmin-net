@@ -1,0 +1,41 @@
+﻿@model MoneyAdmin.ViewModel.WalletViewModel
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">Cartera</h3>
+    </div>
+    <div class="panel-body">
+        <div class="form">
+            <fieldset>
+                @using (Html.BeginForm("Create", "Wallets", FormMethod.Post))
+                {
+                    @Html.HiddenFor(w => w.Id, new { data_bind = "value: Id" })
+                    <div class="form-group">
+                        @Html.LabelFor(w => w.Name, new { @class = "form-control sr-only" })
+                        @Html.TextBoxFor(w => w.Name, new { @class = "form-control", placeholder = "Nombre", data_bind = "value: Name" })
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(w => w.InitialBalance, new { @class = "form-control sr-only" })
+                        @Html.TextBoxFor(w => w.InitialBalance, new
+                    {
+                        @class = "form-control",
+                        placeholder = "Balance inicial",
+                        type = "number",
+                        data_bind = "value: InitialBalance"
+                    })
+                    </div>
+
+                    <div class="form-group text-center">
+                        <button type="submit" class="btn btn-default" data-bind="click: save">Guardar</button>
+                        <button type="button" class="btn btn-danger" data-bind="click: save">Cancelar</button>
+                    </div>
+
+                    @Html.HiddenFor(w => w.AvailableBalance, new { data_bind = "value: AvailableBalance" })
+                }
+            </fieldset>
+        </div>
+    </div>
+    <div class="panel-footer">
+        
+    </div>
+</div>

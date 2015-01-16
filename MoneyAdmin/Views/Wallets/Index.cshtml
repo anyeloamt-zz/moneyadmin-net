@@ -1,0 +1,23 @@
+﻿@model IEnumerable<MoneyAdmin.ViewModel.WalletViewModel>
+
+@{
+    ViewBag.Title = "Recent wallets";
+}
+<div class="container">
+    <div class="row">
+        <h2>@ViewBag.Title</h2>
+        <hr />
+        <div class="row">
+            <div id="walletsContainer">
+                <div data-bind="template: { name: 'wallet-template', foreach: wallets }"></div>
+            </div>
+        </div>
+    </div>
+</div>
+@section scripts
+{
+    <script>
+        var walletsJson = @Html.Raw(Json.Encode(Model));
+        initWalletScreen(walletsJson);
+    </script>
+}

@@ -14,6 +14,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{805753
 		.nuget\NuGet.targets = .nuget\NuGet.targets
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoneyAdmin.Data", "MoneyAdmin.Data\MoneyAdmin.Data.csproj", "{5DCA4716-C9C6-461F-886F-44047DF88322}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -28,6 +30,10 @@ Global
 		{EDFF6594-AF79-490A-997D-AE91DFA3D4ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EDFF6594-AF79-490A-997D-AE91DFA3D4ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EDFF6594-AF79-490A-997D-AE91DFA3D4ED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5DCA4716-C9C6-461F-886F-44047DF88322}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5DCA4716-C9C6-461F-886F-44047DF88322}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5DCA4716-C9C6-461F-886F-44047DF88322}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5DCA4716-C9C6-461F-886F-44047DF88322}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
