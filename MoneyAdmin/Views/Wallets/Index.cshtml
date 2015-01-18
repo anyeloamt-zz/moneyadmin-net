@@ -17,6 +17,14 @@
 @section scripts
 {
     <script>
+        var Urls = {
+            Transactions: {
+                New: '@Url.Action("New", "Transactions")'
+            }
+        };
+        var container = 'walletsContainer';
+    </script>
+    <script>
         var walletsJson = @Html.Raw(Json.Encode(Model));
         initWalletScreen(walletsJson);
     </script>

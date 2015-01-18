@@ -17,7 +17,7 @@
 	});
 
 	self.addTransaction = function() {
-		console.log("ADD TRANSACTION");
+		loadPartial(Urls.Transactions.New + "?walletId=" + self.Id(), container);
 	};
 
 	self.viewTransactions = function() {

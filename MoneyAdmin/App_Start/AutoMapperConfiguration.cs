@@ -21,6 +21,9 @@ namespace MoneyAdmin
             Mapper.CreateMap<User, LoginViewModel>().Back();
 
             Mapper.CreateMap<Wallet, WalletViewModel>().Back();
+            Mapper.CreateMap<Transaction, TransactionViewModel>()
+                //.ForMember(t => t.Wallet, f => f.MapFrom(tr => tr.Wallet))
+                .Back();
 	    }
 	}
 }
