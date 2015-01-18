@@ -101,6 +101,7 @@
     <Compile Include="Repositories\Base\GenericRepository.cs" />
     <Compile Include="Repositories\Base\IGenericRepository.cs" />
     <Compile Include="Repositories\LoginHostoryRepository.cs" />
+    <Compile Include="Repositories\TransactionsRepository.cs" />
     <Compile Include="Repositories\UsersRepository.cs" />
     <Compile Include="Repositories\WalletsRepository.cs" />
     <Compile Include="Util\PasswordHasher.cs" />

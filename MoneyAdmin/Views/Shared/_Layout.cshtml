@@ -17,24 +17,26 @@
     <link rel="apple-touch-icon-precomposed" href="~/Content/ico/apple-touch-icon-57-precomposed.png">
     <link href="~/Content/ico/favicon.ico" rel="shortcut icon" type="image/x-icon" />*@
 </head>
-<body>
-    @Html.Partial("_NavBar")
+    <body>
+        <div class="loadingMask" style="display: none;">Cargando...</div>
 
-    @RenderSection("featured", required: false)
+        @Html.Partial("_NavBar")
 
-    <section class="container">
-        @RenderBody()
-        <hr />
-        <footer class="footer">
-            <p>&copy; Anyeloamt @DateTime.Now.Year</p>
-        </footer>
-    </section>
-    @Html.Partial("_Templates")
+        @RenderSection("featured", required: false)
+    
+        <section class="container">
+            @RenderBody()
+            <hr />
+            <footer class="footer">
+                <p>&copy; Anyeloamt @DateTime.Now.Year</p>
+            </footer>
+        </section>
+        @Html.Partial("_Templates")
 
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
-    @Scripts.Render("~/bundles/ko")
-    @Scripts.Render("~/AppBundle")
-    @RenderSection("scripts", required: false)
-</body>
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/bootstrap")
+        @Scripts.Render("~/bundles/ko")
+        @Scripts.Render("~/bundles/app")
+        @RenderSection("scripts", required: false)
+    </body>
 </html>

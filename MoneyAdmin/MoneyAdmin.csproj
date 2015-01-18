@@ -212,11 +212,13 @@
     <Compile Include="App_Start\NinjectWebCommon.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\TransactionsController.cs" />
     <Compile Include="ViewModel\BaseViewModel.cs" />
     <Compile Include="ViewModel\CategoryViewModel.cs" />
     <Compile Include="ViewModel\FileViewModel.cs" />
     <Compile Include="ViewModel\TransactionViewModel.cs" />
     <Compile Include="ViewModel\WalletViewModel.cs" />
+    <Content Include="Content\LoadingMask.css" />
     <Content Include="Content\Styles.css" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AuthController.cs" />
@@ -391,6 +393,9 @@
     <Content Include="Content\themes\lumen\bootswatch.less" />
     <Content Include="Content\themes\lumen\variables.less" />
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
+    <Content Include="Scripts\App\Scripts.js" />
+    <Content Include="Scripts\App\Transactions\Index.js" />
+    <Content Include="Scripts\App\Transactions\TransactionViewModel.js" />
     <Content Include="Scripts\App\ViewModel.js" />
     <Content Include="Scripts\App\Wallets\Index.js" />
     <Content Include="Scripts\App\Wallets\WalletList.js" />
@@ -466,6 +471,7 @@
     <Content Include="Views\Shared\Partials\Wallets\_Create.cshtml" />
     <Content Include="Views\Shared\_Templates.cshtml" />
     <Content Include="Views\Shared\Partials\Templates\_Wallet.cshtml" />
+    <Content Include="Views\Transactions\New.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

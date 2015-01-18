@@ -52,11 +52,20 @@ namespace MoneyAdmin
             "~/Scripts/knockout.mapping-latest.js"
             ));
 #endif
-            bundles.Add(new ScriptBundle("~/AppBundle").Include(
+            bundles.Add(new ScriptBundle("~/bundles/app").Include(
+                "~/Scripts/App/Transactions/TransactionViewModel.js",
+                "~/Scripts/App/Transactions/Index.js",
+
+                "~/Scripts/App/Scripts.js",
                 "~/Scripts/App/ViewModel.js",
                 "~/Scripts/App/Wallets/WalletViewModel.js",
                 "~/Scripts/App/Wallets/WalletList.js",
                 "~/Scripts/App/Wallets/Index.js"
+                ));
+
+            bundles.Add(new StyleBundle("~/bundles/css/app").Include(
+                "~/Content/themes/lumen/bootstrap.css",
+                "~/Content/Styles.css"
                 ));
 
 #if !DEBUG

@@ -1,0 +1,69 @@
+﻿@model MoneyAdmin.ViewModel.TransactionViewModel
+
+<div class="top-padding"></div>
+<div id="transactionContainer">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-4">
+                <div data-bind="template: { name: 'wallet-template', data: Wallet }"></div>
+            </div>
+            <div class="col-md-8">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">Nueva transacci&oacute;n</div>
+                    <div class="panel-body">
+                        <div class="form">
+                            <fieldset>
+                                @using (Html.BeginForm("New", "Transactions", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                                {
+                                    @Html.HiddenFor(t => t.Id)
+                                    @Html.HiddenFor(t => t.WalletId)
+
+                                    var labelAttributes = new { @class = "control-label sr-only" };
+
+                                    <div class="form-group">
+                                        @Html.LabelFor(t => t.Note, labelAttributes)
+                                        @Html.TextAreaFor(t => t.Note, new { @class = "form-control", placeholder = "Nota", data_bind = "value: Note" })
+                                    </div>
+                                    <div class="form-group">
+                                        @Html.LabelFor(t => t.Category, labelAttributes)
+                                        <select class="form-control"
+                                                data-bind="
+                                        options: categoriesVm,
+                                        optionsText: 'Name',
+                                        optionsValue: 'Id',
+                                        value: CategoryId,
+                                        optionsCaption: '--Selecciona--'"></select>
+                                    </div>
+                                    <div class="form-group">
+                                        @Html.LabelFor(t => t.Amount, labelAttributes)
+                                        @Html.TextBoxFor(t => t.Amount, new { @class = "form-control", placeholder = "Cantidad", data_bind = "value: Amount, valueUpdate: 'input'", type = "number" })
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label">
+                                            @Html.CheckBox("AddFiles", new { data_bind = "checked: AddFiles" })
+                                            <span class="text-label-checkbox">Agregar archivos</span>
+                                        </label>
+                                        <div data-bind="fadeVisible: AddFiles">
+                                            <input class="form-control" type="file" name="Files[]" placeholder="Archivos" multiple />
+                                        </div>
+                                    </div>
+                                    <div class="form-group text-center">
+                                        <button type="submit" class="btn btn-default" , data-bind="click: save">Guardar</button>
+                                        <a href="javascript:;" class="btn btn-danger" data-bind="click: cancel">
+                                            Cancelar
+                                        </a>
+                                    </div>
+                                }
+                            </fieldset>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    var transactonJson = @Html.Raw(Json.Encode(Model));
+    initTransactionForm(transactonJson);
+</script>
