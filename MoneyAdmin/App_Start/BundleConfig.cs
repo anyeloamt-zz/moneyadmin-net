@@ -53,11 +53,15 @@ namespace MoneyAdmin
             ));
 #endif
             bundles.Add(new ScriptBundle("~/bundles/app").Include(
+                "~/Scripts/App/ViewModel.js",
+                "~/Scripts/App/Scripts.js",
+
                 "~/Scripts/App/Transactions/TransactionViewModel.js",
                 "~/Scripts/App/Transactions/Index.js",
 
-                "~/Scripts/App/Scripts.js",
-                "~/Scripts/App/ViewModel.js",
+                "~/Scripts/App/Categories/CategoryViewModel.js",
+                "~/Scripts/App/Categories/Index.js",
+
                 "~/Scripts/App/Wallets/WalletViewModel.js",
                 "~/Scripts/App/Wallets/WalletList.js",
                 "~/Scripts/App/Wallets/Index.js"

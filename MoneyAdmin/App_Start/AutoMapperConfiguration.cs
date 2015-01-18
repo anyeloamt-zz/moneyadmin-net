@@ -22,6 +22,7 @@ namespace MoneyAdmin
 
             Mapper.CreateMap<Wallet, WalletViewModel>().Back();
             Mapper.CreateMap<Transaction, TransactionViewModel>().Back();
+            Mapper.CreateMap<Category, CategoryViewModel>().Back();
 	    }
 	}
 }

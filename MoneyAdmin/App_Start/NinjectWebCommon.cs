@@ -67,6 +67,7 @@ namespace MoneyAdmin.App_Start
         {
             kernel.Bind<IGenericRepository<Wallet>>().To<WalletsRepository>();
             kernel.Bind<IGenericRepository<Transaction>>().To<TransactionsRepository>();
+            kernel.Bind<IGenericRepository<Category>>().To<CategoriesRepository>();
             kernel.Bind<IGenericRepository<User>>().To<UsersRepository>();
 
             kernel.Bind<IGenericRepository<LoginHistory>>().To<LoginHistoryRepository>();

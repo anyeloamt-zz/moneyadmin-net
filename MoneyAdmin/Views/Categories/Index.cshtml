@@ -1,0 +1,31 @@
+﻿@model MoneyAdmin.ViewModel.CategoryViewModel
+
+@{
+    ViewBag.Title = "Categorías";
+}
+<div class="container">
+    <div class="row">
+        <h2>@ViewBag.Title</h2>
+        <hr />
+        <div class="row">
+            <div id="categoriesContainer">
+                <div data-bind="template: { name: 'category-template', foreach: categories }"></div>
+            </div>
+        </div>
+    </div>
+</div>
+@section scripts
+{
+    <script>
+        var Urls = {
+            Categories: {
+                All: '@Url.Action("All", "Categories")'
+            }
+        };
+    </script>
+    <script>
+        $(function() {
+            initCategoryScreen();
+        });
+    </script>
+}

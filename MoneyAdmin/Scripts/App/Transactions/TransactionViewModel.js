@@ -13,7 +13,7 @@ var TransactionViewModel = function() {
 
 	self.AddFiles = ko.observable(false);
 	
-	self.WalletAvailableBalance;
+	self.WalletAvailableBalance = undefined;
 
 	self.init = function() {
 		self.WalletAvailableBalance = self.Wallet().AvailableBalance();
@@ -32,3 +32,6 @@ var TransactionViewModel = function() {
 		self.Wallet().AvailableBalance(self.WalletAvailableBalance - value);
 	});
 };
+
+TransactionViewModel.prototype = Object.create(ViewModel.prototype);
+TransactionViewModel.prototype.constructor = TransactionViewModel;
