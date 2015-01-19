@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Helpers;
 using System.Web.Mvc;
 using AutoMapper;
 using MoneyAdmin.Data.Entities;
@@ -25,12 +26,7 @@ namespace MoneyAdmin.Controllers
 
         public ActionResult Index()
         {
-            var wallets = _repository.RecentWallets()
-                .Where(ByCurrentUserPredicate<Wallet>());
-            
-            var walletsVm = Mapper.Map<IEnumerable<WalletViewModel>>(wallets);
-
-            return View(walletsVm);
+           return View();
         }
 
         //
@@ -41,82 +37,14 @@ namespace MoneyAdmin.Controllers
             return View("Partials/Wallets/_Create");
         }
 
-        //
-        // GET: /Wallets/Create
-
-        public ActionResult Create()
+        public JsonResult Recent()
         {
-            return View();
-        }
+            var wallets = _repository.RecentWallets()
+                .Where(ByCurrentUserPredicate<Wallet>());
 
-        //
-        // POST: /Wallets/Create
+            var walletsVm = Mapper.Map<IEnumerable<WalletViewModel>>(wallets);
 
-        [HttpPost]
-        public ActionResult Create(FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add insert logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
-        //
-        // GET: /Wallets/Edit/5
-
-        public ActionResult Edit(int id)
-        {
-            return View();
-        }
-
-        //
-        // POST: /Wallets/Edit/5
-
-        [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add update logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
-        //
-        // GET: /Wallets/Delete/5
-
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
-
-        //
-        // POST: /Wallets/Delete/5
-
-        [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add delete logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
+            return Json(walletsVm, JsonRequestBehavior.AllowGet);
         }
     }
 }

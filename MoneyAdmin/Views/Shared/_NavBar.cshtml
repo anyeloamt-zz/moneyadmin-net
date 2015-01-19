@@ -22,12 +22,8 @@
             <ul class="nav navbar-nav"></ul>
             <ul class="nav navbar-nav pull-right">
                 <li class="@ActiveItem("Index", "Wallets")">@Html.ActionLink("Carteras", "Index", "Wallets")</li>
-                <li class="@ActiveItem("Index", "Transactions")">
-                    <a href="javascript:;">Transacciones</a>
-                    @*@Html.ActionLink("About", "About", "Home")*@
-                </li>
                 <li class="@ActiveItem("Index", "Categories")">
-                    <a href="javascript:;">Categor&iacute;as</a>
+                    @Html.ActionLink("Categorías", "Index", "Categories")
                 </li>
                 <li class="pull-right ">@{ Html.RenderPartial("_LoginPartial"); }</li>
             </ul>

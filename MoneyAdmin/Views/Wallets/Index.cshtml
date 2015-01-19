@@ -9,7 +9,9 @@
         <hr />
         <div class="row">
             <div id="walletsContainer">
-                <div data-bind="template: { name: 'wallet-template', foreach: wallets }" class="col-md-4"></div>
+                <div class="row">
+                    <div data-bind="template: { name: 'wallet-template', foreach: wallets }" class="col-md-4"></div>
+                </div>
             </div>
         </div>
     </div>
@@ -20,12 +22,16 @@
         var Urls = {
             Transactions: {
                 New: '@Url.Action("New", "Transactions")'
+            },
+            Wallets: {
+                Recent: '@Url.Action("Recent", "Wallets")',
             }
         };
         var container = 'walletsContainer';
     </script>
     <script>
-        var walletsJson = @Html.Raw(Json.Encode(Model));
-        initWalletScreen(walletsJson);
+        $(document).ready(function() {
+            initWalletScreen();
+        });
     </script>
 }
